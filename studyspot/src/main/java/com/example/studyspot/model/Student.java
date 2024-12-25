@@ -1,9 +1,11 @@
 package com.example.studyspot.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import java.util.List;
 
 @Entity
+@Data 
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +25,15 @@ public class Student {
 
     @ElementCollection
     private List<Integer> tutorials;
-    @ElementCollection
-    private List<Integer> likedTutorials; 
-
-    private String profilePicture; 
 
     @ElementCollection
-    private List<Integer> comments; 
+    private List<Integer> likedTutorials;
 
-    
+    private String profilePicture;
+
+    @ElementCollection
+    private List<Integer> comments;
+
+    @Column(nullable = false)
+    private String password; 
 }

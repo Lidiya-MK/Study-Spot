@@ -1,9 +1,12 @@
 package com.example.studyspot.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.util.List;
 
 @Entity
+@Data 
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,13 +18,14 @@ public class Admin {
     @Column(nullable = false)
     private String email;
 
-    private String app; 
+    @Column(nullable = false)
+    private String password; 
+
+    private String app;
 
     @ElementCollection
-    private List<Integer> studentIds; 
+    private List<Integer> studentIds;
 
     @ElementCollection
-    private List<Integer> instructorIds; 
-
-    
+    private List<Integer> instructorIds;
 }
