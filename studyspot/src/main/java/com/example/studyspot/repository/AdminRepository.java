@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface AdminRepository extends JpaRepository<Admin, Integer> {
     Optional<Admin> findByEmail(String email);
 
-    Admin save(Admin admin);
+
 }
